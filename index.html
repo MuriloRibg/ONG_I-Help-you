@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página inicial</title>
+
+    <!-- Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font-google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/Styles/reset/reset.css" />
+    <link rel="stylesheet" href="/Styles/main/main.css" />
+    <link rel="stylesheet" href="/Styles/header/header.css" />
+    <link rel="stylesheet" href="/Styles/body-form/body-form.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="container-fluid__foto">
+          <img src="/imgs/logo.png" alt="foto da logo" id="foto-logo" />
+        </div>
+        <div class="d-flex container-fluid__cadastro" role="search">
+          <label
+            for="inputPassword"
+            class="col-form-label container-fluid__cadastro__label"
+            >Não possui conta?</label
+          >
+          <button type="button" class="btn btn-cadastro">Cadastra-se</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="body-container">
+      <div class="body-login">
+        <div class="body-login__logo-principal">
+          <div class="body-login__logo-principal__titulo">
+            <h1>Bem vindo!</h1>
+          </div>
+          <img
+            class="img-logo-principal"
+            src="/imgs/logo-principal.png"
+            alt="foto da logo principal"
+            width="280px"
+            height="280px"
+          />
+        </div>
+        <div class="body-login__formulario">
+          <div class="body-login__formulario__titulo">
+            <h3>Login</h3>
+          </div>
+          <form class="body-login__formulario__form">
+            <div class="form-group">
+              <div class="form-group__label">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Endereço de e-mail :</label
+                >
+              </div>
+              <div class="form-group__input">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="form-group__label">
+                  <label for="inputPassword" class="col-form-label"
+                    >Senha :</label
+                  >
+                </div>
+                <div class="form-group_input">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+                    placeholder="Digite a senha..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Continuar conectado?
+              </label>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+            </div>
+            <div class="body-login__formulario__form__recuperar">
+              <p>
+                Esqueceu a senha ? <span class="span-recupera">Recuperar</span>
+              </p>
+            </div>
+            <div class="body-login__formulario__form__button">
+              <button class="btn btn-entrar">Entrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boostrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

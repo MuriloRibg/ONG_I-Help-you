@@ -1,0 +1,33 @@
+.navbar {
+    background-color: var(--mu-azul);
+}
+.container-fluid {
+    &__foto {
+        img {
+            width: 80px;
+            height: 8 0px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 10px 2px #00000010;
+        }
+    }
+
+    &__cadastro{
+        &__label{
+            color: white;
+            padding-right: 5px;
+        }
+    }
+
+    .btn-cadastro {
+        color: var(--mu-azul-claro);
+        background-color: white;
+        
+        &:hover{
+            color: white;
+            background-color: var(--mu-azul-claro);
+            transition: 0.5s;
+        }
+    }
+}

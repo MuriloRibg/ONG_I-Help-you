@@ -1,0 +1,33 @@
+.modal-header {
+    .modal-title {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--mu-azul-escuro);
+    }
+}
+
+.modal-footer {
+    .btn-cancelar {
+        color: var(--mu-azul-claro);
+        background-color: white;
+        border: 1px solid var(--mu-azul-claro);
+
+        &:hover {
+            color: white;
+            background-color: var(--mu-azul-claro);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            transition: 0.5s;
+        }
+    }
+    .btn-salvar {
+        color: white;
+        background-color: var(--mu-azul-claro);
+
+        &:hover {
+            color: var(--mu-azul-claro);
+            background-color: white;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            transition: 0.5s;
+        }
+    }
+}

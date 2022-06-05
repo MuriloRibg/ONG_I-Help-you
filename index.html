@@ -7,12 +7,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Login</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="Styles/reset/reset.css" />
-    <link rel="stylesheet" href="Styles/main/main.css" />
-    <link rel="stylesheet" href="Styles/header/header.css" />
-    <link rel="stylesheet" href="Styles/body-form/body-form.css" />
-
     <!-- Boostrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -25,29 +19,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="Styles/reset/reset.css" />
+    <link rel="stylesheet" href="Styles/main/main.css" />
+    <link rel="stylesheet" href="Styles/header/header.css" />
+    <link rel="stylesheet" href="Styles/body-form/body-form.css" />
+    <link rel="stylesheet" href="Styles/modal/modal.css" />
   </head>
   <body>
+    <!-- NavBar -->
     <nav class="navbar">
       <div class="container-fluid">
         <div class="container-fluid__foto">
           <img src="imgs/logo.png" alt="foto da logo" id="foto-logo" />
         </div>
-        <div class="d-flex container-fluid__cadastro" role="search">
+        <div class="d-flex container-fluid__cadastro p-3" role="search">
           <label
             for="inputPassword"
             class="col-form-label container-fluid__cadastro__label"
             >Não possui conta?</label
           >
-          <button type="button" class="btn btn-cadastro">Cadastra-se</button>
+          <button
+            type="button"
+            class="btn btn-cadastro"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-cadastro"
+          >
+            Cadastra-se
+          </button>
         </div>
       </div>
     </nav>
 
+    <!-- Login -->
     <section class="body-container">
       <div class="body-login">
+        <!-- Mensagem e logo -->
         <div class="body-login__logo-principal">
           <div class="body-login__logo-principal__titulo">
             <h1>Bem vindo!</h1>
@@ -60,11 +78,13 @@
             height="280px"
           />
         </div>
+
+        <!-- Formulário -->
         <div class="body-login__formulario">
           <div class="body-login__formulario__titulo">
             <h3>Login</h3>
           </div>
-          <form class="body-login__formulario__form needs-validation" novalidate>
+          <form class="body-login__formulario__form">
             <div class="form-group">
               <div class="form-group__label">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -75,14 +95,14 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="exampleFormControlInput1"
+                  id="input-email"
                   placeholder="name@example.com"
+                  autocomplete="false"
                   required
                 />
               </div>
-              <div class="valid-feedback">Certo!</div>
-              <div class="invalid-feedback">
-                Por favor cheque o e-mail!.
+              <div class="d-none email-validacao-erro">
+                <span class="validacao-erro">E-mail inválido!</span>
               </div>
             </div>
             <div class="form-group">
@@ -96,14 +116,13 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="inputPassword"
+                    id="input-senha"
                     placeholder="Digite a senha..."
                     required
                   />
                 </div>
-                <div class="valid-feedback">Certo!</div>
-                <div class="invalid-feedback">
-                  Por favor cheque a senha!
+                <div class="d-none senha-validacao-erro">
+                  <span class="validacao-erro">Senha inválida!</span>
                 </div>
               </div>
             </div>
@@ -114,8 +133,7 @@
               <input
                 class="form-check-input"
                 type="checkbox"
-                value=""
-                id="flexCheckIndeterminate"
+                id="input-conection"
               />
             </div>
             <div class="body-login__formulario__form__recuperar">
@@ -124,12 +142,89 @@
               </p>
             </div>
             <div class="body-login__formulario__form__button">
-              <button class="btn btn-entrar">Entrar</button>
+              <button type="submit" class="btn btn-entrar">Entrar</button>
             </div>
           </form>
         </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modal-cadastro"
+      tabindex="-1"
+      aria-labelledby="modalCadastroLabel"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Cadastro</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form class="modal-formulario">
+            <div class="modal-body">
+              <div class="row modal-body__inputEmail pb-3">
+                <div>
+                  <label for="staticEmail" class="col-sm-2 col-form-label"
+                    >Email:</label
+                  >
+                </div>
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="input-novo-email"
+                    placeholder="email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row pb-3 modal-body__inputSenha">
+                <div>
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    >Senha:</label
+                  >
+                </div>
+                <div class="col-sm-10">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="input-nova-senha"
+                    placeholder="Digite sua noma senha..."
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-cancelar"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="submit"
+                class="btn btn-salvar"
+                UseSubmitBehavior="false"
+              >
+                Salvar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Boostrap -->
     <script
@@ -137,5 +232,17 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <!-- Scripts -->
+    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/mensagem.component.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/cadastroLogin.js"></script>
   </body>
 </html>

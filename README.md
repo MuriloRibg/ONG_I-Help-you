@@ -1,9 +1,7 @@
 # **ONG I Help you !** ![Bafge](https://img.shields.io/badge/Version-1.0.0-green) ![Bafge](https://img.shields.io/badge/Bootstrap-5.2.0-purple) ![Bafge](https://img.shields.io/badge/Sass-1.52.2-pink) 
 
-<h4 align="center"> 
-	🚧  Site 🚀 
-em contrução...  🚧
-</h4>
+## Documentação
+- Site para o trabalho de Programação WEB, sobre o tema "acolhimento de Refugiados". O site é um login onde pode ser cadastrado uma novo usuário, utilizando o modal de cadastro, e foi feito uma validação dos compos com JS.
 
 ## Documentação de cores
 
@@ -20,7 +18,12 @@ em contrução...  🚧
 - Modal para o cadastro.
 
 ## Stack used
- - Jquery
- - Sass 
+ - HTML
+ - css 
+ - JavaScript
+ 
+## Bibliotecas
+ - Toastify
  - Bootstrap
-
+ - Sass
+ - JQuery

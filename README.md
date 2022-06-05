@@ -16,10 +16,8 @@ em contrução...  🚧
 
 ## Funcionalidades
 
-- Cadastro de usuário.
 - Validação dos campos.
 - Modal para o cadastro.
-
 
 ## Stack used
  - Jquery
